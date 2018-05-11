@@ -1,0 +1,53 @@
+crear un proyecto 
+ng new "nombre del proyecto"
+
+generar componente en angular con cli
+ng g c "NOMBRE DEL COMPONENTE" componenets/holamundo
+
+generar pipes en agular con cli
+ng g pipe pipes/domseguro
+
+generar componentes con rutas 
+ng g c components/home
+generar componentes con rutas 
+ng g c components/home --spec=false -is
+generar servicios 
+ng g s services/spotify --spec=false
+
+instalacion de bootstrap
+npm install bootstrap
+npm install jquery
+npm install popper.js --save
+
+
+
+configiuracion de fecha a español
+Cambiar pipe de Fecha a español
+En la siguiente clase, aprenderemos como funciona el pipe de fecha, pero también una configuración necesaria para cambiarlo a español...
+
+En la última actualización de Angular, ahora es necesario agregar el llamado de una función más... pero aquí les dejo la configuración necesaria en el app.module.ts 
+
+app.module.ts
+
+
+
+import { BrowserModule } from '@angular/platform-browser';
+import { LOCALE_ID, NgModule } from '@angular/core';
+ 
+import { AppComponent } from '../src/app/app.component';
+ 
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs);
+ 
+@NgModule({
+ imports: [ BrowserModule ],
+ declarations: [ AppComponent ],
+ providers: [ { provide: LOCALE_ID, useValue: 'es' } ],
+ bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+Eso sería toda la configuración necesaria... pero en el siguiente video, lo haremos juntos, pero no se olviden de la función
+
+registerLocaleData(localeEs);
+(eso es lo nuevo)
